@@ -1,7 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-smoothing: grayscale;
 }
@@ -16,8 +18,10 @@
     --searchTextColor: #ffffff;
     --highlightTextColor: #202024;
     --textColor: #121214;
-    --footerBoxBackground: #387e96;
+    --footerBackground: #387e96;
     --footerTextColor: #ffffff;
+    --likeColor: green;
+    --dislikeColor: red;    
 }
 
 html, button, input{
@@ -66,7 +70,6 @@ header{
 
 .inputWrapper input{
     width: 100%;
-    height: 4rem;
     padding: 1.6rem;
 
     background-color: var(--searchBoxBackground);
@@ -91,12 +94,16 @@ header{
     border-radius: 50%;
 }
 
+main > *:nth-child(n+2){
+    margin-left: 2.2rem;
+}
+
 main img{
     margin-bottom: 3rem;
 }
 
 .title{
-    margin-bottom: 3rem;
+    margin-bottom: 3rem;    
 }
 
 h1{
@@ -117,19 +124,35 @@ button{
 
     border: none;
     border-radius: 50%;
-
-    background-color: var(--buttonBackgroundColor);  
+      
     background-position: center;
     background-repeat: no-repeat;
+
+    transition: 0.2s;
+
+    background-color: var(--buttonBackgroundColor);
+}
+
+button:hover{
+    scale: 1.1;
 }
 
 .like{
     background-image: url(./assets/like.svg);
 }
 
+.like:active{
+    background: var(--likeColor);
+}
+
 .dislike{
     background-image: url(./assets/dislike.svg);
+
     margin-left: 1.2rem;
+}
+
+.dislike:active{
+    background: var(--dislikeColor);
 }
 
 p{
@@ -147,14 +170,14 @@ main p{
 .relatedArticles{
     max-width: 38rem;
 
-    margin-top: 3rem auto;
+    margin-top: 3rem;
 }
 
 .box{
     display: flex;
-    
-    align-items: flex-start;
 
+    align-items: center;
+    
     gap: 1.6rem;
 }
 
@@ -174,20 +197,55 @@ main p{
 }
 
 footer{
-    background: var(--footerBoxBackground);
+    box-sizing: content-box;
+
+    background: var(--footerBackground);
+
+    padding: 2.6rem 0;
 
     display: flex;
-
-    align-items: center;
-
-    max-width: 43rem;
-    height: 6.5rem;
+    justify-content: center;
 }
 
 footer p{
     font-weight: 600;
-    color: var(--footerTextColor);
 
-    padding: 2.6rem;
+    color: var(--footerTextColor);
+}
+
+@media (min-width: 1120px) {
+    body {
+        max-width: none;
+    }
+
+    .inputWrapper input{
+        justify-content: center;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+
+        margin: 4.4rem auto;
+        gap: 3.4rem;
+    }
+
+    main img{
+        width: 80rem;
+        object-fit: cover;
+    }
+
+    .article{
+        width: 80rem;
+    }
+
+    .title{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main p{
+        max-width: none;
+    }
 }
 
