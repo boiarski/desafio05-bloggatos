@@ -31,12 +31,14 @@ html, button, input{
 body{
     font-size: 1.6rem;
 
-    max-width: 43rem;
+    max-width: clamp(43rem, 50vw + 1rem, 100%vw);
 
     margin: 0 auto;
 }
 
 header{
+    max-width: clamp(43rem, 50vw + 1rem, 100%vw);
+
     box-sizing: content-box;
     display: flex;
     justify-content: center;
@@ -70,7 +72,6 @@ header{
 }
 
 .inputWrapper input{
-    width: 100%;
     padding: 1.6rem;
 
     background-color: var(--searchBoxBackground);
@@ -95,16 +96,26 @@ header{
     border-radius: 50%;
 }
 
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 main > *:nth-child(n+2){
     margin-left: 2.2rem;
 }
 
 main img{
     margin-bottom: 3rem;
+
+    max-width: clamp(43.4rem, 50vw + 1rem, 80rem);
 }
 
 .title{
-    margin-bottom: 3rem;    
+    margin-bottom: 3rem;
+    
+    max-width: clamp(34rem, 50vw + 1rem, 80rem);
 }
 
 h1{
@@ -163,13 +174,13 @@ p{
 }
 
 main p{
-    max-width: 38rem;
+    max-width: clamp(38rem, 50vw + 1rem, 80rem);
 
     margin-bottom: 3rem;
 }
 
 .relatedArticles{
-    max-width: 38rem;
+    max-width: clamp(38rem, 50vw + 1rem, 80rem);
 
     margin-top: 3rem;
 }
@@ -178,13 +189,10 @@ main p{
     display: flex;
 
     align-items: center;
+
+    max-width: clamp(21.5rem, 50vw + 1rem, 38.4rem);
     
     gap: 1.6rem;
-}
-
-.box img{
-    width: 15rem;
-    height: 8.4rem;
 }
 
 .text h1{
@@ -192,9 +200,7 @@ main p{
 }
 
 .text p{
-    font-size: 1.4rem;
-    
-    width: 21.5rem;
+    font-size: 1.4rem;    
 }
 
 footer{
@@ -215,12 +221,9 @@ footer p{
 }
 
 @media (min-width: 1120px) {
-    body{
-        max-width: none;
-    }
-
     header{
         margin: 0 auto;
+        width: 100vw;
     }
 
     main{   
@@ -232,19 +235,9 @@ footer p{
         gap: 4.5rem;
     }
 
-    main img{
-        width: 80rem;
-
-        object-fit: cover;
-    }
-
     .title{
         display: flex;
         justify-content: space-between;
-    }
-
-    main p{
-        max-width: 80rem;
     }
 }
 
