@@ -37,7 +37,6 @@ body{
 }
 
 header{
-    max-width: clamp(43rem, 50vw + 1rem, 100%vw);
 
     box-sizing: content-box;
     display: flex;
@@ -72,6 +71,8 @@ header{
 }
 
 .inputWrapper input{
+    max-width: clamp(24rem, 50vw + 1rem, 108%vw);
+
     padding: 1.6rem;
 
     background-color: var(--searchBoxBackground);
@@ -221,11 +222,6 @@ footer p{
 }
 
 @media (min-width: 1120px) {
-    header{
-        margin: 0 auto;
-        width: 100vw;
-    }
-
     main{   
         display: flex;     
         margin: 4.4rem auto;
