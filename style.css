@@ -154,8 +154,9 @@ button:hover{
     background-image: url(./assets/like.svg);
 }
 
-.like:active{
-    background: var(--likeColor);
+.likeActive{
+    background-color: var(--likeColor);
+    background-image: url(./assets/like.svg);
 }
 
 .dislike{
@@ -164,8 +165,9 @@ button:hover{
     margin-left: 1.2rem;
 }
 
-.dislike:active{
-    background: var(--dislikeColor);
+.dislikeActive{
+    background-color: var(--dislikeColor);
+    background-image: url(./assets/dislike.svg);
 }
 
 p{
